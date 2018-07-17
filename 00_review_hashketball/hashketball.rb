@@ -5,8 +5,9 @@ def game_hash
   home: {
     team_name: "Brooklyn Nets",
     colors: ["Black", "White"],
-    players: {
-      "Alan Anderson" => {
+    players: [
+      {
+        player_name: "Alan Anderson",
         number: 0,
         shoe: 16,
         points: 22,
@@ -16,7 +17,8 @@ def game_hash
         blocks: 1,
         slam_dunks: 1
       },
-      "Reggie Evans" => {
+      {
+        player_name: "Reggie Evans",
         number: 30,
         shoe: 14,
         points: 12,
@@ -26,7 +28,8 @@ def game_hash
         blocks: 12,
         slam_dunks: 7
       },
-      "Brook Lopez" => {
+      {
+        player_name: "Brook Lopez",
         number: 11,
         shoe: 17,
         points: 17,
@@ -36,7 +39,8 @@ def game_hash
         blocks: 1,
         slam_dunks: 15
       },
-      "Mason Plumlee" => {
+      {
+        player_name: "Mason Plumlee",
         number: 1,
         shoe: 19,
         points: 26,
@@ -46,7 +50,8 @@ def game_hash
         blocks: 8,
         slam_dunks: 5
       },
-      "Jason Terry" => {
+      {
+        player_name: "Jason Terry",
         number: 31,
         shoe: 15,
         points: 19,
@@ -56,13 +61,14 @@ def game_hash
         blocks: 11,
         slam_dunks: 1
       }
-    }
+    ]
   },
   away: {
     team_name: "Charlotte Hornets",
     colors: ["Turquoise", "Purple"],
-    players: {
-      "Jeff Adrien" => {
+    players: [
+      {
+        player_name: "Jeff Adrien",
         number: 4,
         shoe: 18,
         points: 10,
@@ -72,7 +78,8 @@ def game_hash
         blocks: 7,
         slam_dunks: 2
       },
-      "Bismak Biyombo" => {
+      {
+        player_name: "Bismak Biyombo",
         number: 0,
         shoe: 16,
         points: 12,
@@ -82,7 +89,8 @@ def game_hash
         blocks: 15,
         slam_dunks: 10
       },
-      "DeSagna Diop" => {
+      {
+        player_name: "DeSagna Diop",
         number: 2,
         shoe: 14,
         points: 24,
@@ -92,7 +100,8 @@ def game_hash
         blocks: 5,
         slam_dunks: 5
       },
-      "Ben Gordon" => {
+      {
+        player_name: "Ben Gordon",
         number: 8,
         shoe: 15,
         points: 33,
@@ -102,7 +111,8 @@ def game_hash
         blocks: 1,
         slam_dunks: 0
       },
-      "Brendan Haywood" => {
+      {
+        player_name: "Brendan Haywood",
         number: 33,
         shoe: 15,
         points: 6,
@@ -112,7 +122,45 @@ def game_hash
         blocks: 5,
         slam_dunks: 12
       }
-    }
+    ]
   }
 }
 end
+
+
+def num_points_scored(player_name)
+  # Call on the hash that we want to check over
+  # Gather all the players
+  # [{player_name: "Brendan Haywood", ...}, {player_name: "Ben Gordon"}...]
+  found_player = find_player(player_name)
+  found_player[:points]
+  # Find the player's name that matches the input of player_name
+
+  # Return the number of points for that player
+end
+
+def players_array
+  game_hash.values.map { |team_info| team_info[:players] }.flatten
+end
+
+def find_player(player_name)
+  players_array.find { |player_hash| player_hash[:player_name] == player_name}
+end
+
+
+def shoe_size(player_name)
+  # Gather all my players
+  # Find the player by name
+  # return shoe_size
+
+
+  found_player = find_player(player_name)
+  found_player[:shoe]
+end
+
+
+
+
+
+
+puts num_points_scored("Alan Anderson") #=> 33
