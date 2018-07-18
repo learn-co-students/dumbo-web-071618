@@ -18,7 +18,7 @@
 Here is a naive implementation of a bank account in Ruby using only a hash which stores key-value pairs.
 
 ```ruby
-bank_account = {"user_id": 3, "balance": 100}
+bank_account = {"account_number": 555309, "user_id": 3, "balance": 100}
 ```
 
 Write an implementation of a bank account that meets the following requirements:
