@@ -8,9 +8,9 @@ class Author
     @era = era
   end
 
-  def write_novel(title, pages)
+  def write_novel(title, genre, pages)
     # binding.pry
-    book = Book.new(title, self, pages) #belongs_to
+    book = Book.new(title, self, genre, pages) #belongs_to
   end
 
   # This method allows us to ASK the Book class for
@@ -21,6 +21,16 @@ class Author
       # Does the book's author match me?
       book.author == self
     end
+  end
+
+  # An array of Genre Objects that an author has written
+  # a book for
+  def genres
+    # [#<Book>,#<Book>,#<Book> ]
+    self.books.map do |book|
+      book.genre
+    end
+    # 5 Books -> 5 Genres
   end
 
   # Since we wrote a method that already shows us the
