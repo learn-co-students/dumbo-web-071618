@@ -12,5 +12,28 @@ class ApplicationController < Sinatra::Base
   set :views, File.join(root, "views")
 
 
+  # Index action
+  # ===========
+  # Gets all of 1 resource (a model)
+  get "/books" do
+    @books = Book.all
+    erb :index   # '/views/index.erb'
+  end
+
+
+  # Show Action
+  # ============
+  # Shows a specific item under a resource
+  get "/books/:id" do
+    # Find a book by its id number
+    # we will assume that params["id"] has the id number we are looking for
+    # render out "show" page
+    # binding.pry
+    @book = Book.find(params["id"])
+    erb :show     # '/views/show.erb'
+  end
+
+
+
 
 end
