@@ -1,13 +1,20 @@
 class Fan
-  # CRUD
-  # Create - We want to add data to our database
+  # CRUD - The 4 actions that we do to our data in our database
+  # Create - "Creating data onto our database"
+  # Read - "Reading data from our database"
+  # Update - "Updating things that exist on our database"
+  # Delete - "Deleting things on our database"
 
   # ORM - Object Relation Mapper
+  # Allows us to use the Ruby code we love and connect to our
+  # database without having to write SQL code again
 
-  # Fan.new(id, name, artist_id)
+
   attr_accessor :id, :name, :artist_id, :artist
 
   # Mass Assignment
+  # Where we take a hash
+  # Fan.new({id: 1, name: "Prince", artist_id: 169 })
   def initialize(attributes)
     # @id = attributes["id"]
     # @name = attributes["name"]
