@@ -3,7 +3,7 @@ require_relative './forms_spec'
 describe "Book" do
   describe 'GET /books/new' do
     it 'sends a status code of 200' do
-      get '/books/new'
+      visit '/books/new'
       expect(last_response.status).to eq(200)
     end
 

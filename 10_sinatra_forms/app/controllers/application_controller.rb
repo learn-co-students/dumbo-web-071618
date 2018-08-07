@@ -11,6 +11,8 @@ class ApplicationController < Sinatra::Base
   set :root, File.join(File.dirname(__FILE__), '..')
   set :views, File.join(root, "views")
 
+  set :method_override, true
+
 
   # Index action
   # ===========
@@ -18,6 +20,28 @@ class ApplicationController < Sinatra::Base
   get "/books" do
     @books = Book.all
     erb :index   # '/views/index.erb'
+  end
+
+  # New Action
+  # ==========
+  # Sends us to the new form
+  get "/books/new" do
+    erb :new
+  end
+
+  # Create Action
+  # ===========
+  # Form takes us to this route and do all of the changes on the backend
+  post '/books' do
+    book = Book.new(params)
+
+    if book.save
+      # Show the new book
+      redirect to("/books/#{book.id}")
+    else
+      # Show me the new form again
+      erb :new
+    end
   end
 
 
@@ -33,7 +57,30 @@ class ApplicationController < Sinatra::Base
     erb :show     # '/views/show.erb'
   end
 
+  # Edit action
+  # =========
+  # Takes us to a form to edit something on our database
+  get '/books/:id/edit' do
+    @book = Book.find(params["id"])
+    erb :edit
+  end
+
+  # Update Action
+  # ==============
+  # It does the behind the scenes work for our form. Where the form will go to
+  patch '/books/:id' do
+    book = Book.find(params["id"])
+    book.update(params["book"])
+
+    redirect to("/books/#{book.id}")
+    # binding.pry
+  end
 
 
+  delete '/books/:id' do
+    book = Book.find(params["id"])
+    book.destroy
 
+    redirect to("/books")
+  end
 end
