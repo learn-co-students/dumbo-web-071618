@@ -1,3 +1,10 @@
+<style>
+  a {
+    color: magenta;
+  }
+</style>
+
+
 <% @books.each do |book| %>
     <li><a href="/books/<%= book.id %>"><%= book.title %></a></li>
 <% end %>
