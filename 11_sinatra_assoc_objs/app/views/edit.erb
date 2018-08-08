@@ -1,0 +1,22 @@
+<h1>Edit a Book!</h1>
+<form action="/books/<%= @book.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <div>
+    <label>Author</label>
+    <input type="text" name="book[author]" value="<%= @book.author %>">
+  </div>
+  <div>
+    <label>Title</label>
+    <input type="text" name="book[title]"  value="<%= @book.title %>">
+  </div>
+  <div>
+    <label>Snippet</label>
+    <input type="text" name="book[snippet]"  value="<%= @book.snippet %>">
+  </div>
+  <input type="submit">
+</form>
+
+<form action="/books/<%= @book.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete this book">
+</form>
