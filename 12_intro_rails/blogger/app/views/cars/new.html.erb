@@ -1,0 +1,11 @@
+<%= form_for @car do |form_helper| %>
+  <%= form_helper.label :name %>
+  <%= form_helper.text_field :name %>
+  <%= form_helper.label :make %>
+  <%= form_helper.text_field :make %>
+  <%= form_helper.label :model %>
+  <%= form_helper.text_field :model %>
+  <%= form_helper.label :year %>
+  <%= form_helper.text_field :year %>
+  <%= form_helper.submit %>
+<% end %>
