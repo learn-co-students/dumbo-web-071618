@@ -1,0 +1,15 @@
+Wow we're editting a doctor
+
+<%= form_for(@doctor) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :specialty %>
+  <%= f.submit %>
+<% end %>
+
+
+<%# form_tag("/doctors/#{@doctor.id}") do %>
+  <!-- <input type="hidden" name="_method" value="patch"> -->
+  <%# text_field_tag "doctor[name]", @doctor.name %>
+  <%# text_field_tag :'doctor[specialty]', @doctor.specialty %>
+  <%#  submit_tag "Edit a Doctor" %>
+<%# end %>
