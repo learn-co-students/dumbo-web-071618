@@ -1,0 +1,33 @@
+<!-- Wow we connected to the controller -->
+<!-- name, specialty-->
+
+
+<%= form_for(@doctor) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :specialty %>
+  <%= f.submit %>
+<% end %>
+
+
+<%# form_tag("/doctors") do %>
+  <%# text_field_tag "doctor[name]" %>
+  <%#text_field_tag :'doctor[specialty]' %>
+  <%#  submit_tag "Create a Doctor" %>
+<%# end %>
+
+<%#  form_tag("/doctors") do %>
+<%#   text_field_tag :name %>
+<%#   text_field_tag :specialty %>
+<%#   submit_tag "Create a Doctor" %>
+<%# end %>
+
+
+
+<!-- <form action="/doctors" method="POST">
+  <input type="hidden" name="authenticty_token" value="fhdjfhsjkdfhjsjk">
+  <input type="text" name="name">
+  <br>
+  <input type="text" name="specialty">
+  <br>
+  <input type="submit" value="Create a Doctor">
+</form> -->

@@ -1,0 +1,19 @@
+<h1>Create an Appointment</h1>
+
+<%= form_for @appointment do |f| %>
+  <%= f.label :date  %>
+  <%= f.text_field :date %>
+  <%= f.label :doctor_id  %>
+  <%= f.collection_select :doctor_id, Doctor.all, :id, :name %>
+  <%= f.submit %>
+<% end %>
+
+<!-- <form class="" action="index.html" method="post">
+  <input type="text">
+  <select name="doctor_id">
+    <option value="1">Prince</option>
+    <option value="2">Rosa</option>
+    <option value="3">Gary</option>
+    <option value="3">Alex</option>
+  </select>
+</form> -->
