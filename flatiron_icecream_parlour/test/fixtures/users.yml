@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  dairy_free: false
+  ice_cream_id: 1
+
+two:
+  username: MyString
+  dairy_free: false
+  ice_cream_id: 1

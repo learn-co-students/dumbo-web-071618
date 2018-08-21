@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FlatironIcecreamParlour</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <h1>Prince's cool app</h1>
+    <!--  If logged in, show logout -->
+    <%  if current_user %>
+      <%= form_tag "/logout", method: :delete do %>
+          <%= submit_tag "Logout" %>
+      <% end %>
+    <!-- If not logged in, show login -->
+    <% else %>
+      <%= link_to "log in", login_path %>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

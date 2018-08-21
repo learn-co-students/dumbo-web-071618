@@ -1,0 +1,3 @@
+<% @ice_creams.each do |ice_cream| %>
+  <p><%= link_to ice_cream.flavor, ice_cream_path(ice_cream) %></p>
+<% end %>
