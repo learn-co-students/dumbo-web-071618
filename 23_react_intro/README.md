@@ -10,5 +10,16 @@
 - React.createElement(tag, properties, children)
 - $$typeof: Symbol.for('react.element')
 
-### Webpack
+### NPM
+- packages:
+  babel
+  babel-core
+  babel-loader
+  babel-preset-env 
+  babel-preset-react
+  react
+  react-dom
+  webpack
+  webpack-cli
+  webpack-dev-server
 
