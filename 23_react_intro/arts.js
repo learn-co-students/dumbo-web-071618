@@ -2308,3 +2308,5 @@ const arts = [
     votes: 95
   }
 ];
+
+export default arts
