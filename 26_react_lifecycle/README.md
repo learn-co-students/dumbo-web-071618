@@ -7,14 +7,16 @@
 ### Birth (Mounting)
 - *constructor(props)*
   - called before it is mounted
+  - setting state based off props
+  - bind
 - *render()*
 - *componentDidMount()*
-  - invoked immediately after a component is mounted (inserted into the tree) 
+  - invoked immediately after a component is mounted (inserted into the tree)
   - make requests to remote endpoints or websocket connections here
 
 ### Life (Updating)
 - *componentDidUpdate(prevProps, prevState)*
-  - invoked immediately after updating occurs 
+  - invoked immediately after updating occurs
   - not called for the initial render
   - watch out for infinite loops if setting state!
 - *render()*
@@ -23,3 +25,14 @@
 - *componentWillUnmount()*
   - invoked immediately before a component is unmounted and destroyed
   - use for cleanup such as invalidating timers, canceling network requests, or cleaning up any subscriptions from componentDidMount().
+
+
+
+
+
+
+
+
+
+
+
